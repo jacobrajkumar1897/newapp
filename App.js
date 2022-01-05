@@ -31,7 +31,7 @@ export default class App extends Component{
           <TextInput placeholder="******" style={styles.mail_Textinput}></TextInput>
           </View>
           <TouchableOpacity style={styles.login_Button}> 
-          <Text style={styles.login_Text}>Login</Text>  
+          <Text style={styles.login_Text}>Login Raj</Text>  
           </TouchableOpacity> 
         </View>
       </SafeAreaView>
@@ -59,6 +59,7 @@ signin_Text:{
   color:"white",
   textAlign:'center',
   fontSize:30,
+  fontFamily:"Raleway-Bold"
 
 },
 signin_to_continue_Text:{
@@ -91,7 +92,8 @@ login_Button:{
 },
 login_Text:{
   color:"white",
-  fontWeight:"bold"
+  fontWeight:"bold",
+  fontFamily:"Raleway-BoldItalic"
 }
 
 });
