@@ -13,6 +13,7 @@ import {
   View,
 } from 'react-native';
 
+
 export default class App extends Component{
   render(){
     return(
@@ -45,7 +46,7 @@ const styles = StyleSheet.create({
 
 
 signincontainer:{
- backgroundColor:"red",
+ backgroundColor:"#ec2f5f",
  paddingTop:80,
  paddingBottom:60
  
@@ -59,7 +60,7 @@ signin_Text:{
   color:"white",
   textAlign:'center',
   fontSize:30,
-  fontFamily:'Raleway-Italic'
+  fontFamily:'Raleway-Medium'
 
 },
 signin_to_continue_Text:{
@@ -83,7 +84,7 @@ mail_Textinput:{
 login_Button:{
   marginTop:"10%",
   alignSelf:"center",
-  backgroundColor:"red",
+  backgroundColor:"#ec2f5f",
   padding:10,
   width:'40%',
   borderRadius:25,
@@ -92,7 +93,8 @@ login_Button:{
 },
 login_Text:{
   color:"white",
-  fontFamily:"Raleway-Italic",
+  fontFamily:'Raleway-Medium'
+  
   
 }
 

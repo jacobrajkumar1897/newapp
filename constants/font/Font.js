@@ -1,8 +1,8 @@
-export const colors = {
-    GREEN: "green",
-    //... more colors here
+
+  const Font_Style = {
+    BASE_FONT : 16,
  };
- 
- export const fonts = {
-    INIT_FONT_SIZE: 16,
- };
+
+ export default {
+   Font_Style
+ }
