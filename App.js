@@ -1,101 +1,37 @@
 
 import React, { Component } from 'react';
-import {
-  Button,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TextInput,
-  useColorScheme,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
+import home from './screens/home/home'
+import loginpage from './screens/login/loginpage'
+import register from './screens/register/register'
 
-export default class App extends Component{
+const Stack = createNativeStackNavigator();
+const HIDE_HEAD = {
+  headerShown: false
+}
+
+export default class App extends Component{ 
   render(){
     return(
-      <SafeAreaView>
-        <View>
-          <View style={styles.signincontainer}>
-            <View style={styles.text_container}>
-          <Text style={styles.signin_Text}>Login</Text>
-          <Text style={styles.signin_to_continue_Text}>Sign in to continue</Text>
-          </View>
-          </View>
-          <View style={styles.email_Container}>
-          <Text style={styles.Label_Text}>PLEASE ENTER YOUR EMAIL</Text>
-          <TextInput placeholder="raj@doodleblue.com" style={styles.mail_Textinput}></TextInput>
-          <Text style={styles.Label_Text}>PLEASE ENTER YOUR PASSWORD</Text>
-          <TextInput placeholder="******" style={styles.mail_Textinput}></TextInput>
-          </View>
-          <TouchableOpacity style={styles.login_Button}> 
-          <Text style={styles.login_Text}>Login</Text>  
-          </TouchableOpacity> 
-        </View>
-      </SafeAreaView>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="register" 
+          screenOptions={HIDE_HEAD}> 
+          <Stack.Screen  
+            name ="home"
+            component={home}
+          />
+          <Stack.Screen 
+            name ="loginpage"
+            component={loginpage}
+          />
+          <Stack.Screen 
+            name ="register"
+            component={register}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
     )
   }
 }
-
-
-
-const styles = StyleSheet.create({
-
-
-signincontainer:{
- backgroundColor:"#ec2f5f",
- paddingTop:80,
- paddingBottom:60
- 
-},
-
-email_Container:{
-  alignSelf:'center',
-  marginTop:20
-},
-signin_Text:{
-  color:"white",
-  textAlign:'center',
-  fontSize:30,
-  fontFamily:'Raleway-Medium'
-
-},
-signin_to_continue_Text:{
-  marginTop:"10%",
-  color:"white",
-  textAlign:'center',
-  fontSize:15
-},
-Label_Text:{
-  fontSize:14,
-  margin:5,
-  color:"grey",
-  opacity:0.5,
-  fontWeight:'bold'
-},
-mail_Textinput:{
-  backgroundColor:'grey',
-  borderRadius:25,
-  paddingLeft:20,
-},
-login_Button:{
-  marginTop:"10%",
-  alignSelf:"center",
-  backgroundColor:"#ec2f5f",
-  padding:10,
-  width:'40%',
-  borderRadius:25,
-  fontWeight:"bold",
-  alignItems:'center',
-},
-login_Text:{
-  color:"white",
-  fontFamily:'Raleway-Medium'
-  
-  
-}
-
-});
